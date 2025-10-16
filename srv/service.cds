@@ -3,4 +3,8 @@ service btpapp {
     function printstring (input: String) returns String;
 
     function add (num1: Integer,num2: Integer) returns Integer;
+
+    @open
+    type  object {};
+    function anyinput (brand: String) returns object;
 }
