@@ -1,1 +1,2 @@
-GET  http://localhost:4004/odata/v4/btpapp/printstring(input='hello')
+#GET  http://localhost:4004/odata/v4/btpapp/printstring(input='hello')
+GET  http://localhost:4004/SJKV/btpapp/add(num1=12,num2=10)
