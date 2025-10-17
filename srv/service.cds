@@ -4,7 +4,7 @@ service btpapp {
 
     function add (num1: Integer,num2: Integer) returns Integer;
 
-    @open
+ @open
     type  object {};
     function anyinput (brand: String) returns object;
 }
