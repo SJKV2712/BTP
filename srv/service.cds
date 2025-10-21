@@ -1,4 +1,4 @@
-@protocol: 'rest'  // To Hide the URL to end
+//@protocol: 'rest'  // To Hide the URL to end
 service btpapp {
     function printstring (input: String) returns String;
 
