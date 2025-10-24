@@ -2,5 +2,6 @@
 #GET  http://localhost:4004/rest/btpapp/add(num1=12,num2=10)
 #GET  http://localhost:4004/odata/v4/btpapp/add(num1=12,num2=10)
 
-GET  http://localhost:4004/rest/btpapp/anyinput(brand='bmw')
+//GET  http://localhost:4004/rest/btpapp/anyinput(brand='bmw')
 //GET  http://localhost:4004/odata/v4/btpapp/anyinput(brand='bmw')
+

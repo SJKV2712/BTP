@@ -37,4 +37,52 @@ module.exports = cds.service.impl(async function(srv) {
             console.log(req.data)
             return result;
           })
+srv.on('createPO', async (req) => {
+    const {
+      CompanyCode,
+      PurchaseOrderType,
+      PurchasingOrganization,
+      PurchasingGroup,
+      Supplier,
+      Material,
+      Plant,
+      OrderQuantity,
+      Unit,
+      NetPrice
+    } = req.data;
+
+    const payload = {
+      CompanyCode,
+      PurchaseOrderType,
+      PurchasingOrganization,
+      PurchasingGroup,
+      Supplier,
+      to_PurchaseOrderItem: [{
+        Material,
+        Plant,
+        OrderQuantity,
+        PurchaseOrderQuantityUnit: Unit,
+        NetPriceAmount: NetPrice
+      }]
+    };
+
+    try {
+      const destination = await cds.connect.to('S4HANA_API_PO');
+      const response = await destination.post('/A_PurchaseOrder', payload);
+      console.log('PO Created Successfully:', response);
+      return {
+        status: 'Success',
+        PurchaseOrder: response.PurchaseOrder,
+        Supplier: response.Supplier
+      };
+    } catch (err) {
+      console.error('Error while creating PO:', err);
+      return {
+        status: 'Failed',
+        message: err.message
+      };
+    }
+  });
+
+
 })
