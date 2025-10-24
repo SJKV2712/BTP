@@ -1,3 +1,6 @@
+namespace sap.cap.btp;
+
+
 entity Product
 {   
     key ID: Integer;
